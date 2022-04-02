@@ -1,5 +1,4 @@
 <?php
-//Created by Sebastian Gielata in 2017 all rights reserved 
 
 date_default_timezone_set('Europe/Warsaw');
 
@@ -9,10 +8,10 @@ function con()
 
             //////////////////////  Konfiguracja bazy ////////////////////////////////////
 
-$username = "root";
-$password = "";
-$hostname = "localhost"; 
-$database = "bankapk"; 
+$username = "admin";
+$password = "secret";
+$hostname = "db";
+$database = "bankapk";
 
 
 

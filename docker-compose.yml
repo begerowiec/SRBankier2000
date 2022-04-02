@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: bankapk
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./database/data_schema.sql:/docker-entrypoint-initdb.d/1.sql"
+  backend:
+    build: .
+    container_name: backend
+    depends_on:
+      - db
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - "8080:80"
+    stdin_open: true
+    tty: true
